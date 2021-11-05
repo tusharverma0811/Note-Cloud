@@ -1,4 +1,5 @@
 import React from "react";
+import "../Stylesheets/FooterStyles.css";
 
 function Footer(){
     const date = new Date();

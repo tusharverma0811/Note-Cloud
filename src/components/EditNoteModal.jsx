@@ -1,6 +1,8 @@
 import React from "react";
 import { Modal, Button } from "react-bootstrap";
 import CloseIcon from "@material-ui/icons/Close";
+import "../Stylesheets/EditNote.css";
+import "../Stylesheets/CreateArea.css";
 
 function EditNoteModal(props) {
   const { titleI, descriptionI } = props;

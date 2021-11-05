@@ -1,48 +1,46 @@
 header {
-    background-color: #f5ba13;
-    width: 100%;
-    padding: 16px 32px;
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
-    margin-top: 0;
-    
-  }
-  header h1 {
-    color: #fff;
-    font-family: "McLaren", cursive;
-    font-weight: 200;
-    font-size: 2rem;
-  }
+  background-color: #f5ba13;
+  width: 100%;
+  padding: 16px 32px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+  margin-top: 0;
+}
+header h1 {
+  color: #fff;
+  font-family: "McLaren", cursive;
+  font-weight: 200;
+  font-size: 2rem;
+}
 
-  .header{
-    color: white;
-    font-size: 2.5rem;
-  }
-  .navbar-brand {
-    color: white;
-    font-size: 2.5rem;
-  }
-  
-  .headerLink{
-    color: white;
-    text-decoration: none;
-  }
-  .headerLink:hover{
-    color: white;
-  }
-  
-  .logoutbtn{
-    width: 77px;
-    height: 43px;
-  }
-  
-  .cloudIcon{
-    color: white;
-    margin-left: 10px;
-  }
-  
-  .username{
-    position: relative;
-    top: -4px;
-    /* font-size: large; */
-  }
-  
+.header {
+  color: white;
+  font-size: 2.5rem;
+}
+.navbar-brand {
+  color: white;
+  font-size: 2.5rem;
+}
+
+.headerLink {
+  color: white;
+  text-decoration: none;
+}
+.headerLink:hover {
+  color: white;
+}
+
+.logoutbtn {
+  width: 77px;
+  height: 43px;
+}
+
+.cloudIcon {
+  color: white;
+  margin-left: 10px;
+}
+
+.username {
+  position: relative;
+  top: -4px;
+  /* font-size: large; */
+}

@@ -3,6 +3,7 @@ import AddIcon from '@material-ui/icons/Add';
 import Fab from '@material-ui/core/Fab';
 import Zoom from '@material-ui/core/Zoom';
 import NoteContext from "../contexts/NoteContext";
+import "../Stylesheets/CreateArea.css";
 
 
 function CreateArea(props) {

@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import NoteContext from "../contexts/NoteContext";
 import EditNoteModal from "./EditNoteModal";
+import "../Stylesheets/NoteStyles.css";
 
 function NoteItem(props) {
 
