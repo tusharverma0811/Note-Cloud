@@ -50,6 +50,19 @@ label {
   border-radius: 5px;
 }
 
+.pwdInput{
+  width: 70%;
+  height: 20px;
+  background: #e0dede;
+  display: flex;
+  justify-content: center;
+  margin: 20px auto;
+  padding: 20px;
+  border: none;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
 .loginBtn {
   width: 70%;
   height: 40px;
@@ -93,4 +106,28 @@ label {
 
 #chk:checked ~ .signup label {
   transform: scale(0.6);
+}
+
+.welcome{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.welcome h1{
+  font-size: 6rem;
+  color: white;
+  font-weight: bolder;
+}
+
+.pwdvisi{
+  position: relative;
+  display: flex;
+}
+
+.pos{
+  position: absolute;
+  top: 24px;
+  right: 60px;
 }

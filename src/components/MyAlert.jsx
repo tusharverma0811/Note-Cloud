@@ -1,5 +1,6 @@
 import React from "react";
 import { Alert } from "react-bootstrap";
+import "../Stylesheets/AlertStyles.css";
 
 const MyAlert = (props) => {
   if(!props.alert)
@@ -16,7 +17,7 @@ const MyAlert = (props) => {
   return (
     <Alert variant={props.alert.type} dismissible>
         <Alert.Heading>{props.alert.type==="danger"?"Error":capitalize(props.alert.type)}</Alert.Heading>
-        <p>
+        <p className="alertContent">
          <strong>{capitalize(props.alert.msg)}</strong>
         </p>
       </Alert>

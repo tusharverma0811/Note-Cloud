@@ -7,9 +7,16 @@ import "../Stylesheets/HeaderStyles.css";
 function Header() {
   let history = useHistory();
   const [userName,setUserName] = React.useState("");
+  const [isMounted,setMount] = React.useState(true);
 
   useEffect(()=>{
-    updateName();
+      if(isMounted){
+        updateName();
+      }
+
+      return ()=>{
+        setMount(false);
+      }
   })
 
 
@@ -61,7 +68,6 @@ function Header() {
             <Nav>
               {/* <Nav.Link> */}
               {/* <Button variant="primary" onClick={handleLogout}>Logout</Button> */}
-              {console.log(userName)}
               <span>Welcome,</span>
               <NavDropdown className="username" title={userName} id="basic-nav-dropdown">
               <NavDropdown.Item><Button variant="primary" className="logoutbtn" size="lg" onClick={handleLogout}>Logout</Button></NavDropdown.Item>

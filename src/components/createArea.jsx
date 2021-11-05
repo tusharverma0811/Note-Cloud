@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext,useEffect } from "react";
 import AddIcon from '@material-ui/icons/Add';
 import Fab from '@material-ui/core/Fab';
 import Zoom from '@material-ui/core/Zoom';
@@ -14,7 +14,7 @@ function CreateArea(props) {
     
     const {addNote} = useContext(NoteContext);
     const[isExpanded,setExpansion]= React.useState(false);
-
+    const ref = React.useRef(null);
     function handleChange(event){
         const{name,value} = event.target;
 
@@ -26,13 +26,26 @@ function CreateArea(props) {
         })
     }
 
+    
+    useEffect(() => {
+      function clickedOutside(event){
+        if(ref.current && !ref.current.contains(event.target)){
+          setExpansion(false);
+        }
+      }
+      document.addEventListener('click', clickedOutside, true);
+      return () => {
+          document.removeEventListener('click', clickedOutside, true);
+      };
+  });
+
     function expand(){
       setExpansion(true);
     }
 
   return (
     <div>
-      <form className="create-note">
+      <form ref={ref} className="create-note">
         {isExpanded && <input
           name="title"
           placeholder="Title"
@@ -51,7 +64,9 @@ function CreateArea(props) {
         />
         <Zoom in={isExpanded?true:false}>
         <Fab
+          type="submit"
           onClick={(event) => {
+            event.preventDefault();
             addNote(newNote.title,newNote.description)
             setNewNote({
                 title:"",

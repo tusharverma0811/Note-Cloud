@@ -19,8 +19,8 @@ export default function Notes(props) {
         <div>
             <Container fluid>
                 <Row>
-                {notes.map((note)=>{
-                    return(<Col xs={12} sm={8} md={4} lg={3} xl={2} > <NoteItem key={note._id} id={note._id} title={note.title} description={note.description} showAlert={props.showAlert}/></Col>)
+                {notes.map((note,index)=>{
+                    return(<Col xs={12} sm={8} md={4} lg={3} xl={2} key={index}> <NoteItem key={index} id={note._id} title={note.title} description={note.description} showAlert={props.showAlert}/></Col>)
                 })}
                 </Row>
             </Container>

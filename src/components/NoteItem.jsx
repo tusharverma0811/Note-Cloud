@@ -37,7 +37,7 @@ function NoteItem(props) {
       }}><i className="fas fa-trash"></i></button>
       <button onClick={openEdit}><i className="far fa-edit"></i></button>
     </div>
-    <EditNoteModal show={editModal} onHide={closeEdit} titleI={title} descriptionI={description} update={updateNote} ></EditNoteModal>
+    <EditNoteModal show={editModal} onHide={closeEdit} titlei={title} descriptioni={description} update={updateNote} ></EditNoteModal>
     </>
   );
 }

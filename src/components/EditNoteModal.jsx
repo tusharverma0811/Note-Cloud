@@ -1,14 +1,12 @@
 import React from "react";
-import { Modal, Button } from "react-bootstrap";
-import CloseIcon from "@material-ui/icons/Close";
+import { Button } from "react-bootstrap";
 import "../Stylesheets/EditNote.css";
-import "../Stylesheets/CreateArea.css";
 
 function EditNoteModal(props) {
-  const { titleI, descriptionI } = props;
+  const { titlei, descriptioni } = props;
   const [newNote, setNewNote] = React.useState({
-    title: titleI,
-    description: descriptionI,
+    title: titlei,
+    description: descriptioni,
   });
   function handleChange(event) {
     const { name, value } = event.target;
@@ -21,9 +19,44 @@ function EditNoteModal(props) {
     });
   }
 
-  return (
-    <Modal
-      {...props}
+  return <>
+  {props.show &&
+    <div className="overlay">
+      <div className="reg">
+      
+      <form className="edit-note">
+      <h4 className="editTitle">Edit Note</h4>
+        <input
+          name="title"
+          placeholder="Title"
+          value={newNote.title}
+          onChange={handleChange}
+          className="titleInput"
+          autoComplete="off"
+          autofocus
+        />
+        <textarea
+          name="description"
+          value={newNote.description}
+          onChange={handleChange}
+        />
+        <Button variant="secondary" className="cancelEdit" size="lg" onClick={()=>{
+          props.onHide();
+        }}>Cancel</Button>
+        <Button variant="warning" className="editBtn" size="lg" onClick={()=>{
+          props.update(newNote)
+        }}>Update Note</Button>
+        </form>
+      </div>
+    </div>}
+  </>;
+}
+
+export default EditNoteModal;
+
+
+  /* <Modal
+     {...props}
       size="md"
       aria-labelledby="contained-modal-title-vcenter"
       centered
@@ -53,11 +86,8 @@ function EditNoteModal(props) {
       </Modal.Body>
       <Modal.Footer>
         <Button onClick={()=>{
-            props.update(newNote)
+          props.update(newNote);
         }}>Update Note</Button>
       </Modal.Footer>
-    </Modal>
-  );
-}
+    </Modal> */
 
-export default EditNoteModal;
