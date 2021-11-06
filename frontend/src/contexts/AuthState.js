@@ -1,11 +1,10 @@
 import React from "react";
 import AuthContext from "./AuthContext";
 
-const host = `http://localhost:5000`;
 
 const AuthState = (props) => {
   const login = async (email, password) => {
-    const respone = await fetch(`${host}/api/auth/login`, {
+    const respone = await fetch(`/api/auth/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

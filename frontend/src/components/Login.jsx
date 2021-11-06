@@ -48,7 +48,7 @@ const Login = (props) => {
     event.preventDefault();
     try {
       const response = await fetch(
-        "http://localhost:5000/api/auth/createuser",
+        "/api/auth/createuser",
         {
           method: "POST",
           headers: {
