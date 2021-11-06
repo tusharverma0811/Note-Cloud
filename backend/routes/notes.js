@@ -76,7 +76,7 @@ router.put("/updatenote/:id", fetchuser, async (req, res) => {
 
     //Check if the note belongs to the logged in user or not
     if (note.user.toString() != req.user.id) {
-      res.status(401).send("Not allowed");
+      res.status(401).json({error:"Invalid Operation for the current user"});
     }
 
     note = await Note.findByIdAndUpdate(
