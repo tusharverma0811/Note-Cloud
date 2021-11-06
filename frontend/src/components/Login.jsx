@@ -41,7 +41,6 @@ const Login = (props) => {
         history.push("/");
       }
     } catch (err) {
-      console.log(err);
       props.showAlert("Some Internal Error Occured", "info");
     }
   };
